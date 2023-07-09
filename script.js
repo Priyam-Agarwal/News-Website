@@ -1,3 +1,4 @@
+const proxyUrl = "https://cors-anywhere.herokuapp.com/"
 const API_KEY = "ff932b83c39f43c7b313a6a25172fb1e";
 const url = "https://newsapi.org/v2/everything?q=";
 
@@ -8,7 +9,7 @@ function reload() {
 }
 
 async function fetchNews(query) {
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+    const res = await fetch(`${proxyUrl}${url}${query}&apiKey=${API_KEY}`);
     const data = await res.json();
     bindData(data.articles);
 }
